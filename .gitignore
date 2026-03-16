@@ -1,3 +1,5 @@
+.DS_Store
+
 # idea
 .idea
 
@@ -8,3 +10,4 @@
 # model
 vosk-model-*
 
+__pycache__
