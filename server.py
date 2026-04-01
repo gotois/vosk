@@ -1,10 +1,12 @@
+import os
 import json
 import wave
 from flask import Flask, request, jsonify
 from vosk import Model, KaldiRecognizer
 
 app = Flask(__name__)
-model = Model("vosk-model-small-ru-0.22")
+model_path = os.getenv("VOSK_MODEL_PATH")
+model = Model(model_path)
 
 @app.route("/recognize", methods=["POST"])
 def recognize():

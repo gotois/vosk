@@ -1,8 +1,11 @@
+__pycache__/
 .idea
 .git
-.dockerignore
 .gitignore
+.dockerignore
+Dockerfile
 LICENSE
 README.md
 vosk-model-*.zip
 *.wav
+*.log

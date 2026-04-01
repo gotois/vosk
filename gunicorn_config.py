@@ -1,6 +1,7 @@
 import multiprocessing
 
 workers = max(2, multiprocessing.cpu_count() * 2)
+preload_app = True
 worker_class = 'sync'
 timeout = 300
 bind = '0.0.0.0:2700'
