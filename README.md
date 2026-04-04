@@ -2,6 +2,15 @@
 
 ## Installation
 
+.env
+```
+VOSK_MODEL_PATH=/models/vosk-model-small-ru-0.22
+```
+
+```bash
+bash install.sh
+```
+
 ```shell
 docker-compose up --build
 ```
