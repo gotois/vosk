@@ -2,18 +2,13 @@
 
 ## Installation
 
-.env
-```
-VOSK_MODEL_PATH=/models/vosk-model-small-ru-0.22
-```
-
 ```bash
-bash install.sh
-```
-
-```shell
 docker-compose up --build
 ```
+
+The Vosk model is downloaded into `/models` while the image is built. To use a
+new model version in development, update `VOSK_MODEL` in `compose.dev.yml`,
+then rebuild the image.
 
 ## Supported Audio
 

@@ -15,10 +15,12 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 ARG VOSK_MODEL=vosk-model-small-ru-0.22
-RUN wget -q "https://alphacephei.com/vosk/models/${VOSK_MODEL}.zip" \
-    && unzip -q "${VOSK_MODEL}.zip" \
-    && rm "${VOSK_MODEL}.zip"
+RUN mkdir -p /models \
+    && wget -q -O "/tmp/${VOSK_MODEL}.zip" "https://alphacephei.com/vosk/models/${VOSK_MODEL}.zip" \
+    && unzip -q "/tmp/${VOSK_MODEL}.zip" -d /models \
+    && rm "/tmp/${VOSK_MODEL}.zip"
 
-ENV VOSK_MODEL_PATH=/app/vosk-model-small-ru-0.22
+ENV VOSK_MODEL=${VOSK_MODEL}
+ENV VOSK_MODEL_PATH=/models/${VOSK_MODEL}
 
 COPY . .

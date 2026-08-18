@@ -6,6 +6,7 @@ __pycache__/
 Dockerfile
 LICENSE
 README.md
+models/
 vosk-model-*.zip
 *.wav
 *.log
